@@ -1,0 +1,10 @@
+
+<mat-card *ngFor="let cliente of clientes" class="mat-card-cliente-listagem">
+  <mat-card-header>
+    <mat-card-title><mat-icon>person</mat-icon>{{cliente.nome}}</mat-card-title><br>
+    <mat-card-subtitle *ngIf="cliente.cpf">CPF: {{cliente.cpf}}</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="cliente.endereco">Endereço: {{cliente.endereco}}</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="cliente.telefone">Telefone: {{cliente.telefone}}</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="cliente.email">Email: {{cliente.email}}</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>

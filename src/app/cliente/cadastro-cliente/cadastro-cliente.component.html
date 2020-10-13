@@ -1,0 +1,36 @@
+<mat-card class="mat-form-inserirCliente">
+  <mat-form-field appearance="fill" class="mart-card-form">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="cliente.nome" placeholder="digite o nome">
+
+
+  </mat-form-field>
+  <mat-form-field appearance="fill"class="mart-card-form">
+    <mat-label>CPF</mat-label>
+    <input matInput [(ngModel)]="cliente.cpf" placeholder="digite o cpf">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill"class="mart-card-form">
+    <mat-label>Endereço</mat-label>
+    <input matInput [(ngModel)]="cliente.endereco" placeholder="digite o endereço">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill"class="mart-card-form">
+    <mat-label>Telefone</mat-label>
+    <input matInput [(ngModel)]="cliente.telefone" placeholder="digite o telefone">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill"class="mart-card-form">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="cliente.email" placeholder="digite o email">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill"class="mart-card-form">
+    <mat-label>Senha</mat-label>
+    <input matInput [(ngModel)]="cliente.senha"placeholder="digite a senha">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="inserirCliente()">Enviar</button>
+
+</mat-card>
+
+<app-listagem-cliente></app-listagem-cliente>

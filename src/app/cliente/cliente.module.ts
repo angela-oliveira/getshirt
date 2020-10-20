@@ -9,6 +9,7 @@ import {MatButtonModule} from "@angular/material/button";
 import { ListagemClienteComponent } from './listagem-cliente/listagem-cliente.component';
 import {MatIconModule} from "@angular/material/icon";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ListagemClienteComponent
   ],
   imports: [
+    MatSelectModule,
     BrowserAnimationsModule,
     CommonModule,
     MatCardModule,

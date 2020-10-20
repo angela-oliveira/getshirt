@@ -1,4 +1,4 @@
-
+<!--
 <mat-card *ngFor="let cliente of clientes" class="mat-card-cliente-listagem">
   <mat-card-header>
     <mat-card-title><mat-icon>person</mat-icon>{{cliente.nome}}</mat-card-title><br>
@@ -8,3 +8,36 @@
     <mat-card-subtitle *ngIf="cliente.email">Email: {{cliente.email}}</mat-card-subtitle>
   </mat-card-header>
 </mat-card>
+-->
+<table mat-table *ngFor="let cliente of clientes"  class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell> Nome </th>
+    <td mat-cell> {{cliente.nome}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="cpf">
+    <th mat-header-cell *ngIf="cliente.cpf"> CPF </th>
+    <td mat-cell> {{cliente.cpf}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="telefone">
+    <th mat-header-cell> Telefone </th>
+    <td mat-cell> {{cliente.telefone}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell> Tamanho </th>
+    <td mat-cell> {{cliente.tamanho}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

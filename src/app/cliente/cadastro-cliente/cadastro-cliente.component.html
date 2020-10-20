@@ -10,7 +10,7 @@
               <mat-label>Observação</mat-label>
               <input matInput [(ngModel)]="cliente.obsevacao" placeholder="Observação">
             </mat-form-field>
-        
+
       </div>
       <!-- <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
@@ -29,7 +29,7 @@
         <button mat-button>SHARE</button>
       </mat-card-actions> -->
     </mat-card>
-    
+
   </div>
   <div class="example-container">
 
@@ -74,12 +74,12 @@
 
   </div>
   </div>
-  
-<div class="button-register-client">
-  <button mat-raised-button color="primary" (click)="inserirCliente()">Pagar</button>
-  <button mat-raised-button color="primary">Listar Pedidos</button>
 
+<div class="button-register-client">
+  <button mat-raised-button color="primary" [routerLink]="['/listarcliente']">Listar Pedidos</button>
+  <button mat-raised-button color="primary">Pagar</button>
+  <button mat-raised-button color="primary" [routerLink]="['/cadastrarcliente']"(click)="inserirCliente()">Cadastrar Cliente</button>
 </div>
   </mat-card>
 
-<app-listagem-cliente></app-listagem-cliente>
+

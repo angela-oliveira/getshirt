@@ -10,6 +10,7 @@ import { ListagemClienteComponent } from './listagem-cliente/listagem-cliente.co
 import {MatIconModule} from "@angular/material/icon";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { MatSelectModule } from '@angular/material/select';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    RouterModule
   ]
 })
 export class ClienteModule { }

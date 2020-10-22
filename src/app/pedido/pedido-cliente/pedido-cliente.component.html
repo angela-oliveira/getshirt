@@ -1,6 +1,6 @@
-<mat-card class="mat-form-inserirCliente">
-  <div class="form-client">
-    <div class="div-forms-client">
+<mat-card class="mat-form-inserirPedido">
+  <div class="form-pedido">
+    <div class="div-forms-pedido">
     <mat-card class="example-card">
       <div>
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
@@ -8,7 +8,7 @@
       <div>
           <mat-form-field appearance="fill" class="example-full-width">
               <mat-label>Observação</mat-label>
-              <input matInput [(ngModel)]="cliente.obsevacao" placeholder="Observação">
+              <input matInput [(ngModel)]="pedido.obsevacao" placeholder="Observação">
             </mat-form-field>
 
       </div>
@@ -35,27 +35,27 @@
 
   <mat-form-field appearance="fill" class="mart-card-form">
     <mat-label>Nome</mat-label>
-    <input matInput [(ngModel)]="cliente.nome" placeholder="digite o nome">
+    <input matInput [(ngModel)]="pedido.nome" placeholder="digite o nome">
 
 
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill"class="mart-card-form">
     <mat-label>CPF</mat-label>
-    <input matInput [(ngModel)]="cliente.cpf" placeholder="digite o cpf">
+    <input matInput [(ngModel)]="pedido.cpf" placeholder="digite o cpf">
   </mat-form-field>
 
 <br>
   <mat-form-field appearance="fill"class="mart-card-form">
     <mat-label>Telefone</mat-label>
-    <input matInput [(ngModel)]="cliente.telefone" placeholder="digite o telefone">
+    <input matInput [(ngModel)]="pedido.telefone" placeholder="digite o telefone">
   </mat-form-field>
 
   <br>
 
   <mat-form-field appearance="fill"class="mart-card-form">
     <mat-label>Tamanho</mat-label>
-    <input matInput [(ngModel)]="cliente.tamanho" placeholder="digite o tamanho">
+    <input matInput [(ngModel)]="pedido.tamanho" placeholder="digite o tamanho">
   </mat-form-field>
   <!-- <mat-form-field appearance="fill">
     <mat-label>Tamanho</mat-label>
@@ -75,10 +75,10 @@
   </div>
   </div>
 
-<div class="button-register-client">
-  <button mat-raised-button color="primary" [routerLink]="['/listarcliente']">Listar Pedidos</button>
-  <button mat-raised-button color="primary" [routerLink]="['/cadastrarcliente']"(click)="inserirCliente()">Pagar</button>
-  <!-- <button mat-raised-button color="primary">Cadastrar Cliente</button> -->
+<div class="button-register-pedido">
+  <button mat-raised-button color="primary" [routerLink]="['/listarpedido']">Listar Pedidos</button>
+  <button mat-raised-button color="primary" [routerLink]="['/pedidoliente']"(click)="inserirPedidos()">Pagar</button>
+  <!-- <button mat-raised-button color="primary">Cadastrar Pedido</button> -->
 </div>
   </mat-card>
 

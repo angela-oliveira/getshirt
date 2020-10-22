@@ -1,4 +1,4 @@
-export const CLIENTES = [
+export const PEDIDOS = [
   {
     nome : 'Maria',
     cpf : '123',
@@ -13,4 +13,4 @@ export const CLIENTES = [
     tamanho: 'M',
     obsevacao: 'teste',
   }
-]
+];

@@ -1,13 +1,14 @@
-export class Cliente {
-  nome : string;
-  cpf : string;
+export class Pedido {
+  nome: string;
+  cpf: string;
   telefone: string;
   tamanho: string;
   obsevacao: string;
+
 }
 // import {Component} from '@angular/core';
 
-// export interface Cliente {
+// export interface Pedido {
 //     nome : string;
 //     cpf : string;
 //     telefone: string;
@@ -15,7 +16,7 @@ export class Cliente {
 //     observacao: string;
 // }
 
-// const ELEMENT_DATA: Cliente[] = [
+// const ELEMENT_DATA: Pedido[] = [
 //   { nome: 'Hydrogen', cpf: '123', telefone: '123', tamanho: 'H', observacao: 'teste'},
 //   { nome: 'Helium', cpf: '4.0026', telefone: '3452352', tamanho: 'He', observacao: 'testeeeee'},
 //   { nome: 'Lithium', cpf: '6.941', telefone: '3452352', tamanho: 'Li', observacao: 'testeeeee'},

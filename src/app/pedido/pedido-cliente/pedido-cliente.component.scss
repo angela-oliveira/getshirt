@@ -1,4 +1,4 @@
-.mat-card-inserirCliente{
+.mat-card-inserirPedido{
   max-width: 800px;
   margin-left: 5px;
   background-color: lavender;
@@ -7,18 +7,18 @@
   margin-right: 5px;
   margin-left: 200px;
 }
-.form-client{
+.form-pedido{
   display: flex;
   flex-direction: row;
   padding: 1rem 5rem;
 }
-.div-forms-client{
+.div-forms-pedido{
   width: 50%;
 }
 .mat-card-image{
   width: 50%;
 }
-.button-register-client{
+.button-register-pedido{
   text-align: center;
 }
 button{

@@ -9,6 +9,7 @@ import {CLIENTES} from "../../shared/model/CLIENTES";
 export class ListagemClienteComponent implements OnInit {
 
   clientes = CLIENTES;
+  displayedColumns = ['nome', 'cpf', 'telefone', 'tamanho'];
   constructor() { }
 
   ngOnInit(): void {

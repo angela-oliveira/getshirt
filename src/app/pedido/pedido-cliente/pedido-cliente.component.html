@@ -52,7 +52,6 @@
   </mat-form-field>
 
   <br>
-
   <mat-form-field appearance="fill"class="mart-card-form">
     <mat-label>Tamanho</mat-label>
     <input matInput [(ngModel)]="pedido.tamanho" placeholder="digite o tamanho">
@@ -77,7 +76,7 @@
 
 <div class="button-register-pedido">
   <button mat-raised-button color="primary" [routerLink]="['/listarpedido']">Listar Pedidos</button>
-  <button mat-raised-button color="primary" [routerLink]="['/pedidoliente']"(click)="inserirPedidos()">Pagar</button>
+  <button mat-raised-button color="primary" [routerLink]="['/pedidocliente']"(click)="inserirPedidos()">Pagar</button>
   <!-- <button mat-raised-button color="primary">Cadastrar Pedido</button> -->
 </div>
   </mat-card>

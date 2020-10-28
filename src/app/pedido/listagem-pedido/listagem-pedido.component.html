@@ -9,7 +9,7 @@
   </mat-card-header>
 </mat-card>
 -->
-<div>
+<div  fxLayout="row wrap" fxLayout.lt-md="column">
 <table *ngFor="let pedido of pedidos"  class="mat-elevation-z10">
 
   <!--- Note that these columns can be defined in any order.
@@ -37,6 +37,22 @@
   <ng-container matColumnDef="symbol">
     <th mat-header-cell> Tamanho </th>
     <td mat-cell> {{pedido.tamanho}} </td>
+  </ng-container>
+
+
+  <!--teste -->
+  <!-- Action Column -->
+  <ng-container matColumnDef="action">
+    <th mat-header-cell>Ações</th>
+    <td mat-cell>
+      <a routerLink="" class="edit">
+        <i class="material-icons">edit</i>
+      </a>
+
+      <a routerLink="" class="delete">
+        <i class="material-icons ">delete_outline</i>
+      </a>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -19,6 +19,8 @@ import { AppComponent } from './app.component';
 import {PedidoModule} from './pedido/pedido.module';
 import {LayoutModule} from './layout/layout.module';
 import { HeaderComponent } from './components/header/header.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { HeaderComponent } from './components/header/header.component';
     AppComponent,
     HeaderComponent
   ],
+
   imports: [
     MatSelectModule,
     BrowserModule,
@@ -40,6 +43,8 @@ import { HeaderComponent } from './components/header/header.component';
     PedidoModule,
     LayoutModule,
     MatSidenavModule,
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

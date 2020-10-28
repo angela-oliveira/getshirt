@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Pedido} from '../../shared/model/pedido';
-import {PEDIDOS} from '../../shared/model/PEDIDOS';
+import {ClienteService} from '../../shared/services/cliente.service';
 
 
 @Component({
@@ -13,12 +13,13 @@ export class PedidoClienteComponent implements OnInit {
   pedido: Pedido;
   pedidos: Array<Pedido>;
 
-  constructor() {
+  constructor(private clienteService: ClienteService) {
     this.pedido = new Pedido();
-    this.pedidos = PEDIDOS;
   }
   inserirPedidos(): void{
-    this.pedidos.push(this.pedido);
+    this.clienteService.inserir(this.pedido).subscribe(
+      pedido => console.log(pedido)
+    );
     this.pedido = new Pedido();
   }
   ngOnInit(): void {

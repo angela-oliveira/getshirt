@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PEDIDOS} from "../../shared/model/PEDIDOS";
+import {Pedido} from '../../shared/model/pedido';
+import {ClienteService} from '../../shared/services/cliente.service';
 
 
 @Component({
@@ -9,11 +10,16 @@ import {PEDIDOS} from "../../shared/model/PEDIDOS";
 })
 export class ListagemPedidoComponent implements OnInit {
 
-  pedidos = PEDIDOS;
+  pedidos: Array<Pedido>;
   displayedColumns = ['nome', 'cpf', 'telefone', 'tamanho'];
-  constructor() { }
+  constructor(private clienteService: ClienteService) {
+
+  }
 
   ngOnInit(): void {
+   this.clienteService.listar().subscribe(
+     pedidos => this.pedidos = pedidos
+   );
   }
 
 }

@@ -1,0 +1,40 @@
+{
+  "pedidos": [
+    {
+      "id": 1,
+      "nome": "Maria",
+      "CPF": "010101",
+      "telefone": "123",
+      "tamanho": "G"
+    },
+    {
+      "id": 2,
+      "nome": "Pedro",
+      "CPF": "010105",
+      "telefone": "125",
+      "tamanho": "M"
+    },
+    {
+      "id": 3,
+      "nome": "Carol",
+      "CPF": "010103",
+      "telefone": "124",
+      "tamanho": "PP"
+    },
+    {
+      "id": 4,
+      "nome": "Fernanda",
+      "CPF": "010107",
+      "telefone": "1236",
+      "tamanho": "P"
+    },
+    {
+      "nome": "Helena",
+      "cpf": "12425",
+      "telefone": "79999",
+      "tamanho": "P",
+      "id": 5
+    }
+  ],
+  "observacao": []
+}

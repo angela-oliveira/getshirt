@@ -8,6 +8,12 @@ const routes: Routes = [
     path: 'listarpedido',
     component: ListagemPedidoComponent
   },
+
+  {
+    path: 'pedidocliente/:id',
+    component: PedidoClienteComponent
+  },
+
   {
     path: 'pedidocliente',
     component: PedidoClienteComponent

@@ -3,37 +3,23 @@
     {
       "id": 1,
       "nome": "Maria",
-      "CPF": "010101",
+      "cpf": "010101",
       "telefone": "123",
       "tamanho": "G"
     },
     {
-      "id": 2,
-      "nome": "Pedro",
-      "CPF": "010105",
-      "telefone": "125",
-      "tamanho": "M"
-    },
-    {
-      "id": 3,
-      "nome": "Carol",
-      "CPF": "010103",
-      "telefone": "124",
-      "tamanho": "PP"
-    },
-    {
-      "id": 4,
-      "nome": "Fernanda",
-      "CPF": "010107",
-      "telefone": "1236",
-      "tamanho": "P"
-    },
-    {
-      "nome": "Helena",
-      "cpf": "12425",
-      "telefone": "79999",
-      "tamanho": "P",
+      "nome": "Eva",
+      "cpf": "6787",
+      "telefone": "111",
+      "tamanho": "M",
       "id": 5
+    },
+    {
+      "nome": "Gustavo",
+      "cpf": "34",
+      "telefone": "1221",
+      "tamanho": "p",
+      "id": 6
     }
   ],
   "observacao": []

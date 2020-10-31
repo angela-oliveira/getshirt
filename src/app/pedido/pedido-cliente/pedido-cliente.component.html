@@ -76,7 +76,8 @@
 
 <div class="button-register-pedido">
   <button mat-raised-button color="primary" [routerLink]="['/listarpedido']">Listar Pedidos</button>
-  <button mat-raised-button color="primary" [routerLink]="['/pedidocliente']"(click)="inserirPedidos()">Pagar</button>
+  <button mat-raised-button color="primary" [routerLink]="['/pedidocliente']"(click)="inserirPedido()"  *ngIf="operacaoCadastro">Pagar</button>
+  <button mat-raised-button color="primary" [routerLink]="['/pedidocliente']"(click)="inserirPedido()"  *ngIf="!operacaoCadastro">Atualizar pedido</button>
   <!-- <button mat-raised-button color="primary">Cadastrar Pedido</button> -->
 </div>
   </mat-card>

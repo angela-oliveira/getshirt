@@ -13,14 +13,25 @@
       "telefone": "111",
       "tamanho": "M",
       "id": 5
-    },
-    {
-      "nome": "Maria",
-      "cpf": "123",
-      "telefone": "1254",
-      "tamanho": "P",
-      "id": 6
     }
   ],
-  "observacao": []
+  "observacao": [],
+
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "José",
+      "cpf": "11111",
+      "telefone": "1235",
+      "email": "jose@gmail.com",
+      "endereco": "Rua tal"
+    },
+    {
+      "nome": "Carla",
+      "cpf": "22222",
+      "telefone": "1236",
+      "email": "carla@gmail.com",
+      "endereco": "Rua tal 2"
+    }
+  ]
 }

@@ -8,11 +8,12 @@
       "tamanho": "G"
     },
     {
+      "id": 5,
       "nome": "Eva",
       "cpf": "6787",
       "telefone": "111",
       "tamanho": "M",
-      "id": 5
+
     }
   ],
   "observacao": [],
@@ -27,6 +28,7 @@
       "endereco": "Rua tal"
     },
     {
+      "id": 2,
       "nome": "Carla",
       "cpf": "22222",
       "telefone": "1236",

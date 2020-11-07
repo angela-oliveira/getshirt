@@ -12,7 +12,7 @@
       "nome": "Eva",
       "cpf": "6787",
       "telefone": "111",
-      "tamanho": "M",
+      "tamanho": "M"
 
     }
   ],
@@ -25,6 +25,7 @@
       "cpf": "11111",
       "telefone": "1235",
       "email": "jose@gmail.com",
+      "senha": "jose",
       "endereco": "Rua tal"
     },
     {
@@ -33,6 +34,7 @@
       "cpf": "22222",
       "telefone": "1236",
       "email": "carla@gmail.com",
+      "senha": "carla",
       "endereco": "Rua tal 2"
     }
   ]

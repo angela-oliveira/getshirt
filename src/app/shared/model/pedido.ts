@@ -5,8 +5,10 @@ export class Pedido {
   telefone: string;
   tamanho: string;
   obsevacao: string;
+  // DataPedido:
 
 }
+
 // import {Component} from '@angular/core';
 
 // export interface Pedido {

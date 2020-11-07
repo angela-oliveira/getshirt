@@ -21,12 +21,14 @@ import {LayoutModule} from './layout/layout.module';
 import { HeaderComponent } from './components/header/header.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
+import { LogInComponent } from './log-in/log-in.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    LogInComponent
   ],
 
   imports: [

@@ -3,21 +3,26 @@
     {
       "id": 1,
       "nome": "Maria",
-      "cpf": "010101",
+      "cpf": "1010",
       "telefone": "123",
       "tamanho": "G"
     },
     {
       "id": 5,
-      "nome": "Eva",
-      "cpf": "6787",
+      "nome": "Carla",
+      "cpf": "1011",
       "telefone": "111",
       "tamanho": "M"
-
+    },
+    {
+      "nome": "Pedro",
+      "cpf": "1111",
+      "telefone": "236",
+      "tamanho": "G",
+      "id": 6
     }
   ],
   "observacao": [],
-
   "clientes": [
     {
       "id": 1,

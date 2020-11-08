@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class ListagemPedidoComponent implements OnInit {
 
   pedidos: Array<Pedido>;
-  displayedColumns = ['nome', 'cpf', 'telefone', 'tamanho'];
+  displayedColumns = ['nome' , 'cpf' , 'telefone' , 'tamanho'];
 
   constructor(private pedidoService: PedidoService, private roteador: Router) {
 
@@ -26,7 +26,7 @@ export class ListagemPedidoComponent implements OnInit {
 
 
   editar(pedido: Pedido): void {
-    this.roteador.navigate(['pedidocliente', pedido.id]);
+    this.roteador.navigate(['cadastrarpedido', pedido.id]);
   }
 
   remover(pedido: Pedido): void {
@@ -42,8 +42,5 @@ export class ListagemPedidoComponent implements OnInit {
     );
 
   }
-
-
-
 
 }

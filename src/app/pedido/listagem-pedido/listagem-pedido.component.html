@@ -1,50 +1,34 @@
-<!--
-<mat-card *ngFor="let cliente of clientes" class="mat-card-cliente-listagem">
-  <mat-card-header>
-    <mat-card-title><mat-icon>person</mat-icon>{{cliente.nome}}</mat-card-title><br>
-    <mat-card-subtitle *ngIf="cliente.cpf">CPF: {{cliente.cpf}}</mat-card-subtitle>
-    <mat-card-subtitle *ngIf="cliente.endereco">Endereço: {{cliente.endereco}}</mat-card-subtitle>
-    <mat-card-subtitle *ngIf="cliente.telefone">Telefone: {{cliente.telefone}}</mat-card-subtitle>
-    <mat-card-subtitle *ngIf="cliente.email">Email: {{cliente.email}}</mat-card-subtitle>
-  </mat-card-header>
-</mat-card>
--->
-<div  fxLayout="row wrap" fxLayout.lt-md="column">
-<table *ngFor="let pedido of pedidos"  class="mat-elevation-z10">
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+<div class="mat-elevation-z4">
+<table  *ngFor="let pedido of pedidos" aria-label="Elements" class="full-width-table-z10" >
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="nome">
-    <th mat-header-cell> Nome </th>
-    <td mat-cell> {{pedido.nome}} </td>
-  </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell >Name</th>
+      <td mat-cell>{{pedido.nome}}</td>
+    </ng-container>
 
-  <!-- Name Column -->
   <ng-container matColumnDef="cpf">
     <th mat-header-cell *ngIf="pedido.cpf"> CPF </th>
     <td mat-cell> {{pedido.cpf}} </td>
   </ng-container>
 
   <!-- Weight Column -->
-  <ng-container matColumnDef="telefone">
-    <th mat-header-cell> Telefone </th>
-    <td mat-cell> {{pedido.telefone}} </td>
+  <ng-container matColumnDef="telefone" >
+    <th mat-header-cell >Telefone</th>
+    <td mat-cell >{{pedido.telefone}}</td>
   </ng-container>
 
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
-    <th mat-header-cell> Tamanho </th>
-    <td mat-cell> {{pedido.tamanho}} </td>
+  <!-- Weight Column -->
+  <ng-container matColumnDef="tamanho" >
+    <th mat-header-cell>Tamanho</th>
+    <td mat-cell >{{pedido.tamanho}}</td>
   </ng-container>
 
-
-  <!--teste -->
   <!-- Action Column -->
-  <ng-container matColumnDef="action">
+  <ng-container matColumnDef="action" >
     <th mat-header-cell>Ações</th>
-    <td mat-cell>
+    <td mat-cell >
       <a routerLink="" class="edit" (click)="editar(pedido)">
         <i class="material-icons">edit</i>
       </a>
@@ -58,4 +42,5 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-  </div>
+</div>
+

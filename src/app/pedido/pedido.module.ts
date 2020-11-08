@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PedidoClienteComponent } from './pedido-cliente/pedido-cliente.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
@@ -11,12 +10,17 @@ import {MatIconModule} from '@angular/material/icon';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import {RouterModule} from '@angular/router';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import {CadastrarPedidoComponent} from './cadastrar-pedido/cadastrar-pedido.component';
+
 
 
 @NgModule({
-  declarations: [PedidoClienteComponent, ListagemPedidoComponent],
+  declarations: [CadastrarPedidoComponent, ListagemPedidoComponent ],
   exports: [
-    PedidoClienteComponent,
+    CadastrarPedidoComponent,
     ListagemPedidoComponent
   ],
   imports: [
@@ -29,7 +33,10 @@ import {RouterModule} from '@angular/router';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class PedidoModule { }

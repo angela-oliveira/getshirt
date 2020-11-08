@@ -5,11 +5,11 @@ import {PedidoService} from '../../shared/services/pedido.service';
 
 
 @Component({
-  selector: 'app-pedido-cliente',
-  templateUrl: './pedido-cliente.component.html',
-  styleUrls: ['./pedido-cliente.component.scss']
+  selector: 'app-cadastrar-pedido',
+  templateUrl: './cadastrar-pedido.component.html',
+  styleUrls: ['./cadastrar-pedido.component.scss']
 })
-export class PedidoClienteComponent implements OnInit {
+export class CadastrarPedidoComponent implements OnInit {
 
   pedido: Pedido;
   pedidos: Array<Pedido>;

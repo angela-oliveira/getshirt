@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {ListagemPedidoComponent} from './pedido/listagem-pedido/listagem-pedido.component';
-import {PedidoClienteComponent} from './pedido/pedido-cliente/pedido-cliente.component';
+import {CadastrarPedidoComponent} from './pedido/cadastrar-pedido/cadastrar-pedido.component';
 
 const routes: Routes = [
   {
@@ -10,13 +10,13 @@ const routes: Routes = [
   },
 
   {
-    path: 'pedidocliente/:id',
-    component: PedidoClienteComponent
+    path: 'cadastrarpedido/:id',
+    component: CadastrarPedidoComponent
   },
 
   {
-    path: 'pedidocliente',
-    component: PedidoClienteComponent
+    path: 'cadastrarpedido',
+    component: CadastrarPedidoComponent
   }
 ];
 

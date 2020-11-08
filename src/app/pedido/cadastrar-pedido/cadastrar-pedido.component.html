@@ -39,11 +39,7 @@
 
 
   </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill"class="mart-card-form">
-    <mat-label>CPF</mat-label>
-    <input matInput [(ngModel)]="pedido.cpf" placeholder="digite o cpf">
-  </mat-form-field>
+
 
 <br>
   <mat-form-field appearance="fill"class="mart-card-form">
@@ -76,8 +72,8 @@
 
 <div class="button-register-pedido">
   <button mat-raised-button color="primary" [routerLink]="['/listarpedido']">Listar Pedidos</button>
-  <button mat-raised-button color="primary" [routerLink]="['/pedidocliente']"(click)="inserirPedido()"  *ngIf="operacaoCadastro">Pagar</button>
-  <button mat-raised-button color="primary" [routerLink]="['/pedidocliente']"(click)="inserirPedido()"  *ngIf="!operacaoCadastro">Atualizar pedido</button>
+  <button mat-raised-button color="primary" [routerLink]="['/cadastrarpedido']"(click)="inserirPedido()"  *ngIf="operacaoCadastro">Pagar</button>
+  <button mat-raised-button color="primary" [routerLink]="['/cadastrarpedido']"(click)="inserirPedido()"  *ngIf="!operacaoCadastro">Atualizar pedido</button>
   <!-- <button mat-raised-button color="primary">Cadastrar Pedido</button> -->
 </div>
   </mat-card>

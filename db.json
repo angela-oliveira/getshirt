@@ -10,16 +10,8 @@
     {
       "id": 5,
       "nome": "Carla",
-      "cpf": "1011",
       "telefone": "111",
       "tamanho": "M"
-    },
-    {
-      "nome": "Pedro",
-      "cpf": "1111",
-      "telefone": "236",
-      "tamanho": "G",
-      "id": 6
     }
   ],
   "observacao": [],

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Pedido} from '../../shared/model/pedido';
 import {PedidoService} from '../../shared/services/pedido.service';
 import {Router} from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -11,19 +12,22 @@ import {Router} from '@angular/router';
 })
 export class ListagemPedidoComponent implements OnInit {
 
-  pedidos: Array<Pedido>;
-  displayedColumns = ['nome' , 'cpf' , 'telefone' , 'tamanho'];
+  dataSource: MatTableDataSource<Pedido>;
+  mostrarColunas = ['nome', 'telefone', 'tamanho', 'acoes'];
+  private id: number;
+
+
+
 
   constructor(private pedidoService: PedidoService, private roteador: Router) {
 
   }
 
   ngOnInit(): void {
-   this.pedidoService.listar().subscribe(
-     pedidos => this.pedidos = pedidos
-   );
+    this.pedidoService.listar().subscribe(
+      pedidos => this.dataSource = new MatTableDataSource(pedidos)
+    );
   }
-
 
   editar(pedido: Pedido): void {
     this.roteador.navigate(['cadastrarpedido', pedido.id]);
@@ -32,9 +36,9 @@ export class ListagemPedidoComponent implements OnInit {
   remover(pedido: Pedido): void {
     this.pedidoService.remover(pedido.id).subscribe(
       resposta => {
-        const indxPedidoARemover = this.pedidos.findIndex(p => p.cpf === pedido.cpf);
+        const indxPedidoARemover = this.dataSource.data.findIndex(p => p.cpf === pedido.cpf);
         if (indxPedidoARemover > -1) {
-          this.pedidos.splice(indxPedidoARemover, 1);
+          this.dataSource.data.splice(indxPedidoARemover, 1);
           this.roteador.navigate(['listarpedido']);
           console.log('Removido com sucesso');
         }

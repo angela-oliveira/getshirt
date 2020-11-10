@@ -1,33 +1,17 @@
 
 .mat-elevation-z4{
-  width: 1300px;
+  width: 1200px;
   margin-top: 10px;
-  margin-left: 40px;
-  flex-direction: row ;
-  margin: 1rem;
+  margin-left: 30px;
 
 }
-
-.full-width-table-z10 {
-  width: 100%;
-}
-
 table{
-  margin: 1rem;
-  margin-top: 1rem;
-  margin-left: 0%;
-  padding:5px 30px;
-  padding-left: 0px;
-  text-align-all: justify;
-  text-align: right;
+  margin-top: 15px;
+  width: 100%;
+  text-align-all: center;
   background-color: ghostwhite;
-  margin:1 auto;
-  box-shadow: 0 2px 9px ghostwhite;
-  border-spacing: 2px;
+  margin-left: 1px;
   cursor: pointer;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-
 }
 
 .edit > i{

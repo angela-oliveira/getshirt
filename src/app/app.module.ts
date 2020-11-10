@@ -22,6 +22,8 @@ import { HeaderComponent } from './components/header/header.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
 import { LogInComponent } from './log-in/log-in.component';
+import {ClienteModule} from './cliente/cliente.module';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { LogInComponent } from './log-in/log-in.component';
     LayoutModule,
     MatSidenavModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    ClienteModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

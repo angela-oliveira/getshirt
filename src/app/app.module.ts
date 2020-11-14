@@ -30,7 +30,7 @@ import {MatTabsModule} from '@angular/material/tabs';
   declarations: [
     AppComponent,
     HeaderComponent,
-    LogInComponent
+    LogInComponent,
   ],
 
   imports: [
@@ -50,7 +50,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     FlexLayoutModule,
     HttpClientModule,
     ClienteModule,
-    MatTabsModule
+    MatTabsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,19 +3,18 @@
     {
       "id": 1,
       "nome": "Maria",
-      "cpf": "1010",
-      "telefone": "123",
+      "telefone": "12345678912",
       "tamanho": "G"
     },
     {
       "id": 5,
       "nome": "Carla",
-      "telefone": "111",
+      "telefone": "11122233344",
       "tamanho": "M"
     },
     {
       "nome": "Helena",
-      "telefone": "1235",
+      "telefone": "83123545678",
       "tamanho": "M",
       "id": 6
     }

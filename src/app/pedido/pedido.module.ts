@@ -14,6 +14,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {CadastrarPedidoComponent} from './cadastrar-pedido/cadastrar-pedido.component';
+import {PipesModule} from '../shared/pipes/pipes.module';
 
 
 
@@ -36,7 +37,8 @@ import {CadastrarPedidoComponent} from './cadastrar-pedido/cadastrar-pedido.comp
     RouterModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    PipesModule
   ]
 })
 export class PedidoModule { }

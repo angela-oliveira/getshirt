@@ -1,9 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PedidoService } from './pedido.service';
-import {PedidoFirestoreService} from './pedido-firestore.service';
+import { PedidoFirestoreService } from './pedido-firestore.service';
 
-describe('PedidoService', () => {
+describe('PedidoFirestoreService', () => {
   let service: PedidoFirestoreService;
 
   beforeEach(() => {

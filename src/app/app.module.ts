@@ -24,6 +24,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { LogInComponent } from './log-in/log-in.component';
 import {ClienteModule} from './cliente/cliente.module';
 import {MatTabsModule} from '@angular/material/tabs';
+import {FirestoreModule} from './firestore/firestore.module';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     HttpClientModule,
     ClienteModule,
     MatTabsModule,
+    FirestoreModule,
 
   ],
   providers: [],

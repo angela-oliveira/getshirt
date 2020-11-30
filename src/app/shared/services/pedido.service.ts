@@ -20,11 +20,11 @@ export class PedidoService {
   inserir(pedido: Pedido): Observable<Pedido>{
     return this.httpClient.post<Pedido>(this.URL_PEDIDOS, pedido);
   }
-  remover(id: number): Observable<object> {
+  remover(id: string): Observable<object> {
     return this.httpClient.delete(`${this.URL_PEDIDOS}/${id}`);
   }
 
-  pesquisarPorId(id: number): Observable<Pedido> {
+  pesquisarPorId(id: string): Observable<Pedido> {
     return this.httpClient.get<Pedido>(`${this.URL_PEDIDOS}/${id}`);
   }
 

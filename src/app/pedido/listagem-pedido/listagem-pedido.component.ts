@@ -3,6 +3,7 @@ import {Pedido} from '../../shared/model/pedido';
 import {PedidoService} from '../../shared/services/pedido.service';
 import {Router} from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
+import {PedidoFirestoreService} from '../../shared/services/pedido-firestore.service';
 
 
 @Component({
@@ -14,17 +15,17 @@ export class ListagemPedidoComponent implements OnInit {
 
   dataSource: MatTableDataSource<Pedido>;
   mostrarColunas = ['nome', 'telefone', 'tamanho', 'acoes'];
-  private id: number;
+  // private id: number;
 
 
 
 
-  constructor(private pedidoService: PedidoService, private roteador: Router) {
+  constructor(private pedidoFirestoreService: PedidoFirestoreService, private roteador: Router) {
 
   }
 
   ngOnInit(): void {
-    this.pedidoService.listar().subscribe(
+    this.pedidoFirestoreService.listar().subscribe(
       pedidos => this.dataSource = new MatTableDataSource(pedidos)
     );
   }
@@ -34,15 +35,11 @@ export class ListagemPedidoComponent implements OnInit {
   }
 
   remover(pedido: Pedido): void {
-    this.pedidoService.remover(pedido.id).subscribe(
+    this.pedidoFirestoreService.remover(pedido.id).subscribe(
       resposta => {
-        const indxPedidoARemover = this.dataSource.data.findIndex(p => p.cpf === pedido.cpf);
-        if (indxPedidoARemover > -1) {
-          this.dataSource.data.splice(indxPedidoARemover, 1);
           this.roteador.navigate(['listarpedido']);
           console.log('Removido com sucesso');
         }
-      }
     );
 
   }

@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class PedidoService {
-  URL_PEDIDOS =  'http://localhost:3000/pedidos';
+  URL_PEDIDOS =  'http://localhost:5050/pedidos';
   pedidos: Array<Pedido>;
 
   constructor(private httpClient: HttpClient) {
@@ -29,6 +29,6 @@ export class PedidoService {
   }
 
   atualizar(pedido: Pedido): Observable<Pedido> {
-    return this.httpClient.put<Pedido>(`${this.URL_PEDIDOS}/${pedido.id}`, pedido);
+    return this.httpClient.put<Pedido>(`${this.URL_PEDIDOS}/${pedido.idPedido}`, pedido);
   }
 }

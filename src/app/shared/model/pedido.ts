@@ -1,15 +1,15 @@
 export class Pedido {
 
-  id?: string;
-  nome?: string;
+  idPedido?: string;
+  nomeCliente?: string;
   telefone?: string;
   tamanho?: string;
   observacao?: string;
   // DataPedido:
 
-  constructor(id?: string, pedido: Pedido = {}) {
-    this.id = id;
-    this.nome = pedido.nome;
+  constructor(ididPedido?: string, pedido: Pedido = {}) {
+    this.idPedido = pedido.idPedido;
+    this.nomeCliente = pedido.nomeCliente;
     this.telefone = pedido.telefone;
     this.tamanho = pedido.tamanho;
     this.observacao = pedido.observacao;

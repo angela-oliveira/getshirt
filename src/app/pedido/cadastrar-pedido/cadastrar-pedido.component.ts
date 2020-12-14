@@ -16,13 +16,13 @@ export class CadastrarPedidoComponent implements OnInit {
   pedidos: Array<Pedido>;
   operacaoCadastro = true;
 
-  constructor(private pedidoFirestoreService: PedidoFirestoreService, private rotalAtual: ActivatedRoute, private roteador: Router) {
+  constructor(private pedidoService: PedidoService, private rotalAtual: ActivatedRoute, private roteador: Router) {
     this.pedido = new Pedido();
     if (this.rotalAtual.snapshot.paramMap.has('id')) {
       this.operacaoCadastro = false;
       const idParaEdicao = this.rotalAtual.snapshot.paramMap.get('id');
       // pegar do banco usuario id=idParaEdicao
-      this.pedidoFirestoreService.pesquisarPorId(idParaEdicao).subscribe(
+      this.pedidoService.pesquisarPorId(idParaEdicao).subscribe(
         pedidoRetornado => this.pedido = pedidoRetornado
       );
     }
@@ -32,15 +32,15 @@ export class CadastrarPedidoComponent implements OnInit {
   }
 
   inserirPedido(): void {
-    if (this.pedido.id) {
-      this.pedidoFirestoreService.atualizar(this.pedido).subscribe(
+    if (this.pedido.idPedido) {
+      this.pedidoService.atualizar(this.pedido).subscribe(
         pedidoAlterado => {
           console.log(pedidoAlterado);
           this.roteador.navigate(['listarpedido']);
         }
       );
     } else {
-      this.pedidoFirestoreService.inserir(this.pedido).subscribe(
+      this.pedidoService.inserir(this.pedido).subscribe(
         pedidoInserido => {
           console.log(pedidoInserido);
           this.roteador.navigate(['listarpedido']);

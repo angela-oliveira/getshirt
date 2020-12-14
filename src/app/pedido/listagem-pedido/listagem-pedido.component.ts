@@ -20,22 +20,22 @@ export class ListagemPedidoComponent implements OnInit {
 
 
 
-  constructor(private pedidoFirestoreService: PedidoFirestoreService, private roteador: Router) {
+  constructor(private pedidoService: PedidoService, private roteador: Router) {
 
   }
 
   ngOnInit(): void {
-    this.pedidoFirestoreService.listar().subscribe(
+    this.pedidoService.listar().subscribe(
       pedidos => this.dataSource = new MatTableDataSource(pedidos)
     );
   }
 
   editar(pedido: Pedido): void {
-    this.roteador.navigate(['cadastrarpedido', pedido.id]);
+    this.roteador.navigate(['cadastrarpedido', pedido.idPedido]);
   }
 
   remover(pedido: Pedido): void {
-    this.pedidoFirestoreService.remover(pedido.id).subscribe(
+    this.pedidoService.remover(pedido.idPedido).subscribe(
       resposta => {
           this.roteador.navigate(['listarpedido']);
           console.log('Removido com sucesso');

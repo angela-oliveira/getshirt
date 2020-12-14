@@ -23,7 +23,7 @@ export class PedidoFirestoreService {
   }
 
   inserir(pedido: Pedido): Observable<object> {
-    delete pedido.id;
+    delete pedido.idPedido;
     return from(this.colecaoPedidos.add(Object.assign({}, pedido)));
   }
 
@@ -36,6 +36,6 @@ export class PedidoFirestoreService {
   }
 
   atualizar(pedido: Pedido): Observable<void> {
-    delete pedido.id;
-    return from(this.colecaoPedidos.doc(pedido.id).update(Object.assign({}, pedido)));
+    delete pedido.idPedido;
+    return from(this.colecaoPedidos.doc(pedido.idPedido).update(Object.assign({}, pedido)));
   }}

@@ -4,8 +4,14 @@ import {ListagemPedidoComponent} from './pedido/listagem-pedido/listagem-pedido.
 import {CadastrarPedidoComponent} from './pedido/cadastrar-pedido/cadastrar-pedido.component';
 import {CadastrarClienteComponent} from './cliente/cadastrar-cliente/cadastrar-cliente.component';
 import {CadastrarEmpresaComponent} from './empresa/cadastrar-empresa/cadastrar-empresa.component';
+import {HeaderComponent} from './components/header/header.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HeaderComponent
+  },
+
   {
     path: 'listarpedido',
     component: ListagemPedidoComponent

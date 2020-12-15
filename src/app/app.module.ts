@@ -25,6 +25,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import {ClienteModule} from './cliente/cliente.module';
 import {MatTabsModule} from '@angular/material/tabs';
 import {FirestoreModule} from './firestore/firestore.module';
+import {EmpresaModule} from './empresa/empresa.module';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import {FirestoreModule} from './firestore/firestore.module';
     ClienteModule,
     MatTabsModule,
     FirestoreModule,
+    EmpresaModule
 
   ],
   providers: [],

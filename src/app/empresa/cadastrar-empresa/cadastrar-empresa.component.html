@@ -1,1 +1,45 @@
-<p>cadastrar-empresa works!</p>
+<div class="container">
+  <div class="content first-content">
+    <div class="first-column">
+      <h2 class="title title-primary">welcome back!</h2>
+      <p class="description description-primary">To keep connected with us</p>
+      <p class="description description-primary">please login with your personal info</p>
+      <mat-form-field appearance="fill" class="mat-form-simples">
+        <mat-label>Email</mat-label>
+        <input matInput type="Email">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="mat-form-simples">
+        <mat-label>Senha</mat-label>
+        <input matInput type="Senha">
+      </mat-form-field>
+      <p><a class="password" href="#">forgot your password?</a></p>
+      <button id="signin" class="btn btn-primary">sign in</button>
+    </div>
+    <div class="second-column">
+      <h2 class="title title-second">create account</h2>
+      <mat-form-field appearance="fill" class="mat-form-simples">
+        <mat-label>Empresa</mat-label>
+        <input matInput [(ngModel)]="empresa.nome">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="mat-form-simples">
+        <mat-label>CNPJ</mat-label>
+        <input matInput [(ngModel)]="empresa.cnpj">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="mat-form-simples">
+        <mat-label>Telefone</mat-label>
+        <input matInput [(ngModel)]="empresa.telefone" placeholder="Telefone">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="mat-form-simples">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="empresa.email" placeholder="Email">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="mat-form-simples">
+        <mat-label>Senha</mat-label>
+        <input matInput [(ngModel)]="empresa.senha" placeholder="Senha">
+      </mat-form-field>
+      <button class="btn btn-second" [routerLink]="['/cadastrarpedido']"(click)="inserirEmpresa()">sign up</button>
+    </div><!-- second column -->
+  </div><!-- first content -->
+</div>
+
+

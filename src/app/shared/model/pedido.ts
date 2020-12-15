@@ -7,7 +7,7 @@ export class Pedido {
   observacao?: string;
   // DataPedido:
 
-  constructor(ididPedido?: string, pedido: Pedido = {}) {
+  constructor(idPedido?: string, pedido: Pedido = {}) {
     this.idPedido = pedido.idPedido;
     this.nomeCliente = pedido.nomeCliente;
     this.telefone = pedido.telefone;

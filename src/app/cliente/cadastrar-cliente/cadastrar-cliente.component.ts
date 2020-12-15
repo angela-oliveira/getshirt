@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Cliente} from '../../shared/model/cliente';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ClienteService} from '../../shared/services/cliente.service';
-import {AuthService} from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-cadastrar-cliente',
@@ -40,7 +39,7 @@ export class CadastrarClienteComponent implements OnInit {
       this.clienteService.inserir(this.cliente).subscribe(
         clienteInserido => {
           console.log(clienteInserido);
-          this.roteador.navigate(['listarpedido']);
+          this.roteador.navigate(['cadastrarpedido']);
         }
       );
     }

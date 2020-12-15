@@ -6,6 +6,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from "@angular/material/icon";
+import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [CadastrarClienteComponent],
@@ -18,7 +20,9 @@ import {MatIconModule} from "@angular/material/icon";
     MatSelectModule,
     MatInputModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    RouterModule
   ]
 })
 export class ClienteModule { }

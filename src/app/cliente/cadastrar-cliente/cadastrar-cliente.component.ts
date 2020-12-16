@@ -10,12 +10,14 @@ import {ClienteService} from '../../shared/services/cliente.service';
 })
 export class CadastrarClienteComponent implements OnInit {
   cliente: Cliente;
+  clienteLogin: Cliente;
   clientes: Array<Cliente>;
   operacaoCadastro = true;
 
   // tslint:disable-next-line:max-line-length
   constructor(private clienteService: ClienteService, private rotalAtual: ActivatedRoute, private roteador: Router) {
     this.cliente = new Cliente();
+    this.clienteLogin = new Cliente();
     if (this.rotalAtual.snapshot.paramMap.has('id')) {
       this.operacaoCadastro = false;
       const idParaEdicao = this.rotalAtual.snapshot.paramMap.get('id');
@@ -44,10 +46,11 @@ export class CadastrarClienteComponent implements OnInit {
       );
     }
   }
-  // // tslint:disable-next-line:typedef
-  // fazerLogin(){
-  //   // console.log(this.usuario);
-  //   this.authService.fazerLogin(this.cliente);
-  // }
+  fazerlogin(): void{
+    this.clienteService.login(this.clienteLogin.email, this.clienteLogin.senha).subscribe(
+      clienteLogado => this.clienteLogin = clienteLogado
+    );
+    this.roteador.navigate(['cadastrarpedido']);
+  }
 
 }

@@ -4,14 +4,14 @@
       <h2 class="title title-primary">Login</h2>
       <mat-form-field appearance="fill" class="mat-form-simples">
         <mat-label>Email</mat-label>
-        <input matInput type="Email">
+        <input matInput [(ngModel)]="clienteLogin.email" placeholder="Email">
       </mat-form-field>
       <mat-form-field appearance="fill" class="mat-form-simples">
         <mat-label>Senha</mat-label>
-        <input matInput type="Senha">
+        <input matInput [(ngModel)]="clienteLogin.senha" placeholder="Senha">
       </mat-form-field>
       <p><a class="password" href="#">Esqueceu a senha?</a></p>
-      <button id="signin" class="btn btn-primary">Entrar</button>
+      <button id="signin" class="btn btn-primary" [routerLink]="['/clientepainel']"(click)="fazerlogin()">Entrar</button>
     </div>
     <div class="second-column">
       <h2 class="title title-second">Criar Conta</h2>

@@ -28,6 +28,10 @@ export class ClienteService {
     return this.httpClient.get<Cliente>(`${this.URL_CLIENTES}/${id}`);
   }
 
+  login(email: string, senha: string): Observable<Cliente> {
+    return this.httpClient.get<Cliente>(`${this.URL_CLIENTES}/${email}/${senha}`);
+  }
+
   atualizar(cliente: Cliente): Observable<Cliente> {
     return this.httpClient.put<Cliente>(`${this.URL_CLIENTES}/${cliente.idCliente}`, cliente);
   }

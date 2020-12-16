@@ -31,8 +31,7 @@ import {EmpresaModule} from './empresa/empresa.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    LogInComponent,
+    HeaderComponent
   ],
 
   imports: [

@@ -43,5 +43,8 @@ export class ListagemPedidoComponent implements OnInit {
     );
 
   }
+  goback(){
+    window.history.back()
+  }
 
 }

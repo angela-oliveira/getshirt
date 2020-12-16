@@ -71,3 +71,22 @@ button{
   border: 1px solid #EE7C7C;
   color: #EE7C7C;
 }
+
+.btn-goback {
+  background-color: #EE7C7C;
+  border: 1px solid #EE7C7C;
+  transition: background-color .5s;
+  border-radius: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 10px;
+  padding: 10px 50px;
+  cursor: pointer;
+  font-weight: bold;
+  align-self: center;
+}
+.btn-goback:hover {
+  background-color: transparent;
+  color: #EE7C7C;
+  border: 1px solid #EE7C7C;
+}

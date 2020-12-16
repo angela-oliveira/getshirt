@@ -36,4 +36,7 @@ export class ListagemClienteComponent implements OnInit {
     );
 
   }
+  goback(){
+    window.history.back()
+  }
 }

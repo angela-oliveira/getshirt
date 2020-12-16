@@ -1,41 +1,46 @@
-<div class="component">
-<div class="mat-elevation-z4">
-  <table mat-table [dataSource]= "dataSource">
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="nome">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td mat-cell *matCellDef="let pedido">{{pedido.nomeCliente | titlecase}}</td>
+<div class="component">
+  <div class="button-go-back">
+    <button class="btn btn-primary" (click)="goback()">Voltar</button> 
+  </div>
+  
+  <div class="mat-elevation-z4">
+    <table mat-table [dataSource]= "dataSource">
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let pedido">{{pedido.nomeCliente | titlecase}}</td>
+        </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="telefone" >
+        <th mat-header-cell *matHeaderCellDef>Telefone</th>
+        <td mat-cell *matCellDef="let pedido">{{pedido.telefone | telefonePipe }}</td>
       </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="telefone" >
-      <th mat-header-cell *matHeaderCellDef>Telefone</th>
-      <td mat-cell *matCellDef="let pedido">{{pedido.telefone | telefonePipe }}</td>
-    </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="tamanho" >
+        <th mat-header-cell *matHeaderCellDef>Quantidade </th>
+        <td mat-cell *matCellDef="let pedido">{{pedido.tamanho | uppercase}}</td>
+      </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="tamanho" >
-      <th mat-header-cell *matHeaderCellDef>Quantidade </th>
-      <td mat-cell *matCellDef="let pedido">{{pedido.tamanho | uppercase}}</td>
-    </ng-container>
+      <!-- Action Column -->
+      <ng-container matColumnDef="acoes" >
+        <th mat-header-cell *matHeaderCellDef >Ações</th>
+        <td mat-cell *matCellDef="let pedido" >{{pedido.acoes}}
+          <a routerLink="" class="edit" (click)="editar(pedido)">
+            <i class="material-icons">edit</i>
+          </a>
 
-    <!-- Action Column -->
-    <ng-container matColumnDef="acoes" >
-      <th mat-header-cell *matHeaderCellDef >Ações</th>
-      <td mat-cell *matCellDef="let pedido" >{{pedido.acoes}}
-        <a routerLink="" class="edit" (click)="editar(pedido)">
-          <i class="material-icons">edit</i>
-        </a>
+          <a routerLink="" class="delete" (click)="remover(pedido)">
+            <i class="material-icons ">delete_outline</i>
+          </a>
+        </td>
+      </ng-container>
 
-        <a routerLink="" class="delete" (click)="remover(pedido)">
-          <i class="material-icons ">delete_outline</i>
-        </a>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef=" mostrarColunas"></tr>
-    <tr mat-row *matRowDef="let row; columns:  mostrarColunas;"></tr>
-    </table>
-</div>
+      <tr mat-header-row *matHeaderRowDef=" mostrarColunas"></tr>
+      <tr mat-row *matRowDef="let row; columns:  mostrarColunas;"></tr>
+      </table>
+  </div>
 </div>

@@ -63,3 +63,27 @@
   border: 1px solid #EE7C7C;
   color: #EE7C7C;
 }
+.quit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-quit {
+  border-radius: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 10px;
+  padding: 10px 50px;
+  cursor: pointer;
+  font-weight: bold;
+  // width: 250px;
+  // height: 50px;
+  margin: 0 10px;
+  align-self: center;
+  margin-top: 1rem;
+  background-color: #6D6466;
+  border: 1px solid #6D6466;
+  transition: background-color .5s;
+  text-align: center;
+
+}

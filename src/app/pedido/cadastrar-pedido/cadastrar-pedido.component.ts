@@ -48,6 +48,9 @@ export class CadastrarPedidoComponent implements OnInit {
       );
     }
   }
+  goback(){
+    window.history.back()
+  }
 
 }
 

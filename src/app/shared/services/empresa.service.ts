@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class EmpresaService {
-  URL_EMPRESAS =  'http://localhost:5050/empresas';
+  URL_EMPRESAS =  'http://localhost:5051/empresas';
   empresas: Array<Empresa>;
 
   constructor(private httpClient: HttpClient) {

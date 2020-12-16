@@ -17,7 +17,7 @@ body {
   background-color: #fff;
   border-radius: 15px;
   width: 960px;
-  height: 70%;
+  height: 80%;
   justify-content: space-between;
   align-items: center;
   position: relative;
@@ -25,7 +25,7 @@ body {
 .content::before {
   content: "";
   position: absolute;
-  background-color: #58af9b;
+  background-color: #EE7C7C;
   width: 40%;
   height: 100%;
   border-top-left-radius: 15px;
@@ -43,18 +43,7 @@ body {
   color: #fff;
 }
 .title-second {
-  color: #58af9b;
-}
-.description {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 30px;
-}
-.description-primary {
-  color: #fff;
-}
-.description-second {
-  color: #7f8c8d;
+  color: #EE7C7C;
 }
 .btn {
   border-radius: 15px;
@@ -76,17 +65,18 @@ body {
 }
 .btn-primary:hover {
   background-color: #fff;
-  color: #58af9b;
+  color: #EE7C7C;
 }
 .btn-second {
-  background-color: #58af9b;
-  border: 1px solid #58af9b;
+  background-color: #EE7C7C;
+  border: 1px solid #EE7C7C;
   transition: background-color .5s;
+  text-align: center;
 }
 .btn-second:hover {
   background-color: #fff;
-  border: 1px solid #58af9b;
-  color: #58af9b;
+  border: 1px solid #EE7C7C;
+  color: #EE7C7C;
 }
 .first-content {
   display: flex;
@@ -111,7 +101,7 @@ input:-webkit-autofill
   -webkit-text-fill-color: #000 !important;
 }
 .password {
-  color: #34495e;
+  color: #fff;
   font-size: 14px;
   margin: 15px 0;
   text-align: center;

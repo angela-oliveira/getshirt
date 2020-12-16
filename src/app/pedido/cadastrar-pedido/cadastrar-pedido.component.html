@@ -1,81 +1,58 @@
+<div class="component">
 <mat-card class="mat-form-inserirPedido">
   <div class="form-pedido">
     <div class="div-forms-pedido">
-    <mat-card class="example-card">
-      <div>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-      </div>
-      <div>
-          <mat-form-field appearance="fill" class="example-full-width">
-              <mat-label>Observação</mat-label>
-              <input matInput [(ngModel)]="pedido.observacao" placeholder="Observação">
-            </mat-form-field>
+      <mat-card class="example-card">
+        <div>
+          <label class="image-upload-container btn btn-bwm">
+            <span>Selecione uma imagem</span>
+            <input #imageInput
+                  type="file"
+                  accept="image/*">
+          </label>
+          <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+        </div>
+      </mat-card>
 
-      </div>
-      <!-- <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Camisa TSI/mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions> -->
-    </mat-card>
+    </div>
+    <div class="example-container">
 
-  </div>
-  <div class="example-container">
-
-  <mat-form-field appearance="fill" class="mart-card-form">
-    <mat-label>Nome</mat-label>
-    <input matInput [(ngModel)]="pedido.nomeCliente" placeholder="digite o nome">
+    <mat-form-field appearance="fill" class="mart-card-form">
+      <mat-label>Turma</mat-label>
+      <input matInput [(ngModel)]="pedido.nomeCliente" placeholder="digite o nome">
 
 
-  </mat-form-field>
+    </mat-form-field>
 
-
-<br>
-  <mat-form-field appearance="fill"class="mart-card-form">
-    <mat-label>Telefone</mat-label>
-    <input matInput [(ngModel)]="pedido.telefone" placeholder="digite o telefone">
-  </mat-form-field>
 
   <br>
-  <mat-form-field appearance="fill"class="mart-card-form">
-    <mat-label>Tamanho</mat-label>
-    <input matInput [(ngModel)]="pedido.tamanho" placeholder="digite o tamanho">
-  </mat-form-field>
-  <!-- <mat-form-field appearance="fill">
-    <mat-label>Tamanho</mat-label>
-    <select>
-      <option></option>
-    </select> -->
-<!--    <mat-select>-->
-<!--      <mat-option value="option">PP</mat-option>-->
-<!--      <mat-option value="option">P</mat-option>-->
-<!--      <mat-option value="option">M</mat-option>-->
-<!--      <mat-option value="option">G</mat-option>-->
-<!--      <mat-option value="option">GG</mat-option>-->
-<!--      <mat-option value="option">ExG</mat-option>-->
-<!--    </mat-select>-->
-<!--   </mat-form-field>-->
+    <mat-form-field appearance="fill"class="mart-card-form">
+      <mat-label>Telefone</mat-label>
+      <input matInput [(ngModel)]="pedido.telefone" placeholder="digite o telefone">
+    </mat-form-field>
 
-  </div>
+    <br>
+    <mat-form-field appearance="fill"class="mart-card-form">
+      <mat-label>Quantidade</mat-label>
+      <input matInput [(ngModel)]="pedido.tamanho" placeholder="digite o tamanho">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill" class="mart-card-form example-full-width">
+      <mat-label>Observação</mat-label>
+      <input matInput [(ngModel)]="pedido.observacao" placeholder="Observação">
+    </mat-form-field>
+    </div>
   </div>
 
 <div class="button-register-pedido">
-  <button mat-raised-button color="primary" [routerLink]="['/listarpedido']">Listar Pedidos</button>
-  <button mat-raised-button color="primary" [routerLink]="['/cadastrarpedido']"(click)="inserirPedido()"  *ngIf="operacaoCadastro">Pagar</button>
-  <button mat-raised-button color="primary" [routerLink]="['/cadastrarpedido']"(click)="inserirPedido()"  *ngIf="!operacaoCadastro">Atualizar pedido</button>
-  <!-- <button mat-raised-button color="primary">Cadastrar Pedido</button> -->
+  <button class="btn btn-primary" [routerLink]="['/listarpedido']">Listar Pedidos</button>  
+  <button class="btn btn-second" [routerLink]="['/cadastrarpedido']" (click)="inserirPedido()"  *ngIf="operacaoCadastro">Cadastrar</button>  
+  <!-- <button mat-raised-button color="primary" [routerLink]="['/listarpedido']">Listar Pedidos</button>
+  <button mat-raised-button btn btn-second [routerLink]="['/cadastrarpedido']"(click)="inserirPedido()"  *ngIf="operacaoCadastro">Cadastrar</button> -->
+ <!-- <button mat-raised-button color="primary">Cadastrar Pedido</button> -->
 </div>
   </mat-card>
 
 
+</div>

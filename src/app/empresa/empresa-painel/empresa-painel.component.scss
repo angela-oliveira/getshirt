@@ -3,38 +3,30 @@
   height: 100%;
   background-color: #DFE0E2;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding-top: 5%;
-}
-.mat-card-inserirPedido{
-  width: 80%;
-}
-.example-container {
-  padding-left: 10px;
-}
-.mart-card-form{
-  margin-right: 5px;
-}
-.form-pedido{
-  display: flex;
-  flex-direction: row;
-  padding: 1rem 1rem;
-  margin-top: 10px;
-}
-.div-forms-pedido{
-  width: 50%;
-}
-.mat-card-image{
-  width: 50%;
-}
-.button-register-pedido{
-  text-align: center;
-}
-button{
-  margin: 1rem;
 }
 
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title-primary {
+  color: #6D6466;
+}
+.description {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 30px;
+}
+.description-primary {
+  color: #7f8c8d;
+}
 .btn {
   border-radius: 15px;
   text-transform: uppercase;
@@ -43,8 +35,8 @@ button{
   padding: 10px 50px;
   cursor: pointer;
   font-weight: bold;
-  width: 200px;
-  height: 40px;
+  width: 250px;
+  height: 50px;
   margin: 0 10px;
   align-self: center;
   border: none;

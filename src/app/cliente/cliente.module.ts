@@ -8,11 +8,17 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
+import { ClientePainelComponent } from './cliente-painel/cliente-painel.component';
+import { ListagemClienteComponent } from './listagem-cliente/listagem-cliente.component';
+import { MatTableModule } from '@angular/material/table';
+import {PipesModule} from '../shared/pipes/pipes.module';
 
 @NgModule({
-  declarations: [CadastrarClienteComponent],
+  declarations: [CadastrarClienteComponent, ClientePainelComponent, ListagemClienteComponent],
   exports: [
     CadastrarClienteComponent,
+    ClientePainelComponent,
+    ListagemClienteComponent,
   ],
   imports: [
     CommonModule,
@@ -21,8 +27,10 @@ import {RouterModule} from '@angular/router';
     MatInputModule,
     MatTabsModule,
     MatIconModule,
+    MatTableModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    PipesModule
   ]
 })
 export class ClienteModule { }

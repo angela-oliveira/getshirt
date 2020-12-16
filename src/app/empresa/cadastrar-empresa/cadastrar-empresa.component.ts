@@ -40,7 +40,7 @@ export class CadastrarEmpresaComponent implements OnInit {
       this.empresaService.inserir(this.empresa).subscribe(
         empresaInserido => {
           console.log(empresaInserido);
-          this.roteador.navigate(['cadastrarpedido']);
+          this.roteador.navigate(['empresapainel']);
         }
       );
     }

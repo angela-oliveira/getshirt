@@ -9,13 +9,15 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
+import { EmpresaPainelComponent } from './empresa-painel/empresa-painel.component';
 
 
 
 @NgModule({
-  declarations: [CadastrarEmpresaComponent],
+  declarations: [CadastrarEmpresaComponent, EmpresaPainelComponent],
   exports: [
     CadastrarEmpresaComponent,
+    EmpresaPainelComponent,
   ],
   imports: [
     CommonModule,

@@ -39,7 +39,7 @@ export class CadastrarClienteComponent implements OnInit {
       this.clienteService.inserir(this.cliente).subscribe(
         clienteInserido => {
           console.log(clienteInserido);
-          this.roteador.navigate(['cadastrarpedido']);
+          this.roteador.navigate(['clientepainel']);
         }
       );
     }

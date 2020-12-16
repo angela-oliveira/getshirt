@@ -11,12 +11,14 @@ import {EmpresaService} from '../../shared/services/empresa.service';
 })
 export class CadastrarEmpresaComponent implements OnInit {
   empresa: Empresa;
+  empresaLogin: Empresa;
   empresas: Array<Empresa>;
   operacaoCadastro = true;
 
   // tslint:disable-next-line:max-line-length
   constructor(private empresaService: EmpresaService, private rotalAtual: ActivatedRoute, private roteador: Router) {
     this.empresa = new Empresa();
+    this.empresaLogin = new Empresa();
     if (this.rotalAtual.snapshot.paramMap.has('id')) {
       this.operacaoCadastro = false;
       const idParaEdicao = this.rotalAtual.snapshot.paramMap.get('id');
@@ -45,10 +47,16 @@ export class CadastrarEmpresaComponent implements OnInit {
       );
     }
   }
-  // // tslint:disable-next-line:typedef
-  // fazerLogin(){
-  //   // console.log(this.usuario);
-  //   this.authService.fazerLogin(this.empresa);
-  // }
-
+  fazerloginEmpresa(): void{
+    this.empresaService.login(this.empresaLogin.email, this.empresaLogin.senha).subscribe(
+      empresaLogada => {
+        this.empresaLogin = empresaLogada;
+        if (this.empresaLogin == null){
+          alert('Precisa fazer cadastro!');
+        }else {
+          this.roteador.navigate(['empresapainel']);
+        }
+      }
+    );
+  }
 }

@@ -13,6 +13,7 @@ export class CadastrarClienteComponent implements OnInit {
   clienteLogin: Cliente;
   clientes: Array<Cliente>;
   operacaoCadastro = true;
+  clienteLogado = true;
 
   // tslint:disable-next-line:max-line-length
   constructor(private clienteService: ClienteService, private rotalAtual: ActivatedRoute, private roteador: Router) {
@@ -26,6 +27,7 @@ export class CadastrarClienteComponent implements OnInit {
         clienteRetornado => this.cliente = clienteRetornado
       );
     }
+
   }
   ngOnInit(): void {
   }
@@ -48,9 +50,16 @@ export class CadastrarClienteComponent implements OnInit {
   }
   fazerlogin(): void{
     this.clienteService.login(this.clienteLogin.email, this.clienteLogin.senha).subscribe(
-      clienteLogado => this.clienteLogin = clienteLogado
+      clienteLogado => {
+        this.clienteLogin = clienteLogado;
+        if (this.clienteLogin == null){
+          this.clienteLogado = false;
+          alert('Precisa fazer cadastro!');
+        }else {
+          this.roteador.navigate(['clientepainel']);
+        }
+      }
     );
-    this.roteador.navigate(['cadastrarpedido']);
   }
 
 }

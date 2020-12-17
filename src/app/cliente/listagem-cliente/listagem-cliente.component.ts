@@ -13,7 +13,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ListagemClienteComponent implements OnInit {
 
   dataSource: MatTableDataSource<Cliente>;
-  mostrarColunas = ['nome', 'telefone', 'cpf', 'email'];
+  mostrarColunas = ['nome', 'telefone', 'cpf', 'email', 'acoes'];
 
   constructor(private clienteService: ClienteService, private roteador: Router) { }
 

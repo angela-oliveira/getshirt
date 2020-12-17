@@ -14,7 +14,7 @@ import {PedidoFirestoreService} from '../../shared/services/pedido-firestore.ser
 export class ListagemPedidoComponent implements OnInit {
 
   dataSource: MatTableDataSource<Pedido>;
-  mostrarColunas = ['nome', 'telefone', 'tamanho', 'acoes'];
+  mostrarColunas = ['nome', 'telefone', 'quantidade', 'acoes'];
   // private id: number;
 
 

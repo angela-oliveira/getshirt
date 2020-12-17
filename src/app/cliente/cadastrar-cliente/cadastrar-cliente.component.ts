@@ -71,17 +71,28 @@ export class CadastrarClienteComponent implements OnInit {
     }
   }
   fazerlogin(): void{
-    this.clienteService.login(this.clienteLogin.email, this.clienteLogin.senha).subscribe(
-      clienteLogado => {
-        this.clienteLogin = clienteLogado;
-        if (this.clienteLogin == null){
-          this.clienteLogado = false;
-          alert('Precisa fazer cadastro!');
-        }else {
-          this.roteador.navigate(['clientepainel']);
+    if (!this.clienteLogin.email || !this.clienteLogin.senha) {
+      const snackConfig = new MatSnackBarConfig();
+      snackConfig.politeness = 'assertive';
+      snackConfig.duration = 5000;
+      this.snackBar.open( 'Preencha todos os campos.', 'x', snackConfig)
+    } else {
+      this.clienteService.login(this.clienteLogin.email, this.clienteLogin.senha).subscribe(
+        clienteLogado => {
+          this.clienteLogin = clienteLogado;
+          if (this.clienteLogin == null){
+            this.clienteLogado = false;
+            const snackConfig = new MatSnackBarConfig();
+            snackConfig.politeness = 'assertive';
+            snackConfig.duration = 5000;
+            this.snackBar.open( 'E-mail ou senha incorreta.', 'x', snackConfig)
+          }else {
+            this.roteador.navigate(['clientepainel']);
+          }
         }
-      }
-    );
+      );
+    }
+    
   }
 
 }

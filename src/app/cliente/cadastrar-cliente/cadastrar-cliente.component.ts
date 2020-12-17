@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ClienteService} from '../../shared/services/cliente.service';
 import {MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
 
+
 @Component({
   selector: 'app-cadastrar-cliente',
   templateUrl: './cadastrar-cliente.component.html',
@@ -44,23 +45,29 @@ export class CadastrarClienteComponent implements OnInit {
           snackConfig.panelClass = ['Success'];
 
           this.snackBar.open( 'Cliente alterado com sucesso.', 'x', snackConfig)
+          this.roteador.navigate(['/clientepainel']);
           // this.roteador.navigate(['listarpedido']);
         }
       );
     } else {
-      this.clienteService.inserir(this.cliente).subscribe(
-        clienteInserido => {
-
-          const snackConfig = new MatSnackBarConfig();
-          snackConfig.politeness = 'assertive';
-          snackConfig.duration = 5000;
-          snackConfig.panelClass = ['Success'];
-          this.snackBar.open( 'Cliente cadastrado com sucesso.', 'x', snackConfig)
-
-          console.log(clienteInserido);
-          this.roteador.navigate(['clientepainel']);
-        }
-      );
+      if (!this.cliente.nome) {
+        const snackConfig = new MatSnackBarConfig();
+        snackConfig.politeness = 'assertive';
+        snackConfig.duration = 5000;
+        this.snackBar.open( 'Preencha todos os campos.', 'x', snackConfig)
+      } else {
+        this.clienteService.inserir(this.cliente).subscribe(
+          clienteInserido => {
+            console.log(clienteInserido);
+            const snackConfig = new MatSnackBarConfig();
+            snackConfig.politeness = 'assertive';
+            snackConfig.duration = 5000;
+            this.snackBar.open( 'Cliente cadastrado com sucesso.', 'x', snackConfig)
+            this.roteador.navigate(['clientepainel']);
+          }
+        );
+      }
+      
     }
   }
   fazerlogin(): void{

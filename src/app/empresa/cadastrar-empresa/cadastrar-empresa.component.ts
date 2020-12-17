@@ -37,10 +37,22 @@ export class CadastrarEmpresaComponent implements OnInit {
       this.empresaService.atualizar(this.empresa).subscribe(
         empresaAlterado => {
           console.log(empresaAlterado);
+          this.roteador.navigate(['/empresapainel']);
           // this.roteador.navigate(['listarpedido']);
         }
       );
     } else {
+      console.log('aqui', this.empresa)
+      if (!this.empresa.nome) {
+        console.log('nao existe')
+        const snackConfig = new MatSnackBarConfig();
+        snackConfig.politeness = 'assertive';
+        snackConfig.duration = 5000;
+        snackConfig.panelClass = ['Success'];
+        this.snackBar.open( 'Preencha todos os campos.', 'x', snackConfig)
+        
+
+      } else {
       this.empresaService.inserir(this.empresa).subscribe(
         empresaInserido => {
           console.log(empresaInserido);
@@ -50,8 +62,11 @@ export class CadastrarEmpresaComponent implements OnInit {
           snackConfig.duration = 5000;
           snackConfig.panelClass = ['Success'];
           this.snackBar.open( 'Empresa cadastrada com sucesso.', 'x', snackConfig)
+          this.roteador.navigate(['/empresapainel']);
         }
       );
+
+      }
     }
   }
   fazerloginEmpresa(): void{

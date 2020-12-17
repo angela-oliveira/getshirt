@@ -25,13 +25,14 @@ export class ListagemClienteComponent implements OnInit {
   }
 
   editar(cliente: Cliente): void {
+    console.log( cliente.idCliente)
     this.roteador.navigate(['cadastrarcliente', cliente.idCliente]);
   }
 
   remover(cliente: Cliente): void {
     this.clienteService.remover(cliente.idCliente).subscribe(
       resposta => {
-          this.roteador.navigate(['listarcliente']);
+          this.roteador.navigate(['listarclientes']);
           const snackConfig = new MatSnackBarConfig();
           snackConfig.politeness = 'assertive';
           snackConfig.duration = 5000;

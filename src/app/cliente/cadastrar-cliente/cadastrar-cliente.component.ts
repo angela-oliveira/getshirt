@@ -45,8 +45,13 @@ export class CadastrarClienteComponent implements OnInit {
           snackConfig.panelClass = ['Success'];
 
           this.snackBar.open( 'Cliente alterado com sucesso.', 'x', snackConfig)
+          if (this.operacaoCadastro) {
+
           this.roteador.navigate(['/clientepainel']);
-          // this.roteador.navigate(['listarpedido']);
+          } else {
+
+          this.roteador.navigate(['/listarclientes']);
+          }
         }
       );
     } else {

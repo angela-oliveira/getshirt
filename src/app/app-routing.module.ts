@@ -34,6 +34,10 @@ const routes: Routes = [
     path: 'cadastrarcliente',
     component: CadastrarClienteComponent
   },
+  {
+    path: 'cadastrarcliente/:id',
+    component: CadastrarClienteComponent
+  },
 
   {
       path: 'cadastrarempresa',

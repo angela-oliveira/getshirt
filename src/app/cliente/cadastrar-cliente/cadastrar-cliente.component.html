@@ -37,7 +37,9 @@
         <mat-label>Senha</mat-label>
         <input matInput [(ngModel)]="cliente.senha" placeholder="Senha">
       </mat-form-field>
-      <button class="btn btn-second" (click)="inserirCliente()">Cadastrar</button>
+      <button class="btn btn-second" (click)="inserirCliente()" *ngIf="operacaoCadastro">Cadastrar</button>
+
+      <button class="btn btn-second" (click)="inserirCliente()" *ngIf="!operacaoCadastro">Editar</button>
     </div><!-- second column -->
   </div><!-- first content -->
 </div>

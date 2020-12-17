@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Cliente} from '../../shared/model/cliente';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ClienteService} from '../../shared/services/cliente.service';
+import {MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-cadastrar-cliente',
@@ -16,7 +17,8 @@ export class CadastrarClienteComponent implements OnInit {
   clienteLogado = true;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private clienteService: ClienteService, private rotalAtual: ActivatedRoute, private roteador: Router) {
+  constructor(private clienteService: ClienteService, private rotalAtual: ActivatedRoute,
+              private roteador: Router , private snackBar: MatSnackBar) {
     this.cliente = new Cliente();
     this.clienteLogin = new Cliente();
     if (this.rotalAtual.snapshot.paramMap.has('id')) {
@@ -36,12 +38,25 @@ export class CadastrarClienteComponent implements OnInit {
       this.clienteService.atualizar(this.cliente).subscribe(
         clienteAlterado => {
           console.log(clienteAlterado);
+          const snackConfig = new MatSnackBarConfig();
+          snackConfig.politeness = 'assertive';
+          snackConfig.duration = 5000;
+          snackConfig.panelClass = ['Success'];
+
+          this.snackBar.open( 'Cliente Alterado com sucesso.', 'x', snackConfig)
           // this.roteador.navigate(['listarpedido']);
         }
       );
     } else {
       this.clienteService.inserir(this.cliente).subscribe(
         clienteInserido => {
+
+          const snackConfig = new MatSnackBarConfig();
+          snackConfig.politeness = 'assertive';
+          snackConfig.duration = 5000;
+          snackConfig.panelClass = ['Success'];
+          this.snackBar.open( 'Cliente Cadastrado com sucesso.', 'x', snackConfig)
+
           console.log(clienteInserido);
           this.roteador.navigate(['clientepainel']);
         }

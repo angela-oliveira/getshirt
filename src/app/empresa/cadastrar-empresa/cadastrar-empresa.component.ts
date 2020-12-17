@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Empresa} from '../../shared/model/Empresa';
 import {EmpresaService} from '../../shared/services/empresa.service';
+import {MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-cadastrar-empresa',
@@ -16,7 +17,8 @@ export class CadastrarEmpresaComponent implements OnInit {
   operacaoCadastro = true;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private empresaService: EmpresaService, private rotalAtual: ActivatedRoute, private roteador: Router) {
+  constructor(private empresaService: EmpresaService, private rotalAtual: ActivatedRoute,
+              private roteador: Router,  private snackBar: MatSnackBar) {
     this.empresa = new Empresa();
     this.empresaLogin = new Empresa();
     if (this.rotalAtual.snapshot.paramMap.has('id')) {
@@ -42,7 +44,12 @@ export class CadastrarEmpresaComponent implements OnInit {
       this.empresaService.inserir(this.empresa).subscribe(
         empresaInserido => {
           console.log(empresaInserido);
-          this.roteador.navigate(['empresapainel']);
+
+          const snackConfig = new MatSnackBarConfig();
+          snackConfig.politeness = 'assertive';
+          snackConfig.duration = 5000;
+          snackConfig.panelClass = ['Success'];
+          this.snackBar.open( 'Empresa Cadastrado com sucesso.', 'x', snackConfig)
         }
       );
     }

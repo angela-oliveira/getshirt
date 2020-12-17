@@ -5,6 +5,9 @@ import {CadastrarPedidoComponent} from './pedido/cadastrar-pedido/cadastrar-pedi
 import {CadastrarClienteComponent} from './cliente/cadastrar-cliente/cadastrar-cliente.component';
 import {CadastrarEmpresaComponent} from './empresa/cadastrar-empresa/cadastrar-empresa.component';
 import {HeaderComponent} from './components/header/header.component';
+import {ClientePainelComponent} from './cliente/cliente-painel/cliente-painel.component';
+import {EmpresaPainelComponent} from "./empresa/empresa-painel/empresa-painel.component";
+import {ListagemClienteComponent} from "./cliente/listagem-cliente/listagem-cliente.component";
 
 const routes: Routes = [
   {
@@ -31,12 +34,30 @@ const routes: Routes = [
     path: 'cadastrarcliente',
     component: CadastrarClienteComponent
   },
+  {
+    path: 'cadastrarcliente/:id',
+    component: CadastrarClienteComponent
+  },
 
   {
       path: 'cadastrarempresa',
     component: CadastrarEmpresaComponent
-  }
+  },
 
+  {
+      path: 'clientepainel',
+    component: ClientePainelComponent
+  },
+
+  {
+    path: 'empresapainel',
+    component: EmpresaPainelComponent
+  },
+
+  {
+    path: 'listarclientes',
+    component: ListagemClienteComponent
+  }
 
 ];
 

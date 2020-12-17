@@ -1,22 +1,20 @@
 <div class="container">
   <div class="content first-content">
     <div class="first-column">
-      <h2 class="title title-primary">welcome back!</h2>
-      <p class="description description-primary">To keep connected with us</p>
-      <p class="description description-primary">please login with your personal info</p>
+      <h2 class="title title-primary">Login</h2>
       <mat-form-field appearance="fill" class="mat-form-simples">
         <mat-label>Email</mat-label>
-        <input matInput type="Email">
+        <input matInput [(ngModel)]="clienteLogin.email" placeholder="Email">
       </mat-form-field>
       <mat-form-field appearance="fill" class="mat-form-simples">
         <mat-label>Senha</mat-label>
-        <input matInput type="Senha">
+        <input matInput [(ngModel)]="clienteLogin.senha" placeholder="Senha">
       </mat-form-field>
-      <p><a class="password" href="#">forgot your password?</a></p>
-      <button id="signin" class="btn btn-primary">sign in</button>
+      <p><a class="password" href="#">Esqueceu a senha?</a></p>
+      <button id="signin" class="btn btn-primary" (click)="fazerlogin()">Entrar</button>
     </div>
     <div class="second-column">
-      <h2 class="title title-second">create account</h2>
+      <h2 class="title title-second">Criar Conta</h2>
       <mat-form-field appearance="fill" class="mat-form-simples">
         <mat-label>Nome</mat-label>
         <input matInput [(ngModel)]="cliente.nome" placeholder="nome">
@@ -24,6 +22,8 @@
       <mat-form-field appearance="fill" class="mat-form-simples">
         <mat-label>CPF</mat-label>
         <input matInput [(ngModel)]="cliente.cpf" placeholder="CPF">
+        <td mat-cell *matCellDef="let cliente">{{cliente.cpf | cpf}}</td>
+
       </mat-form-field>
       <mat-form-field appearance="fill" class="mat-form-simples">
         <mat-label>Telefone</mat-label>
@@ -37,7 +37,9 @@
         <mat-label>Senha</mat-label>
         <input matInput [(ngModel)]="cliente.senha" placeholder="Senha">
       </mat-form-field>
-      <button class="btn btn-second" [routerLink]="['/cadastrarpedido']"(click)="inserirCliente()">sign up</button>
+      <button class="btn btn-second" (click)="inserirCliente()" *ngIf="operacaoCadastro">Cadastrar</button>
+
+      <button class="btn btn-second" (click)="inserirCliente()" *ngIf="!operacaoCadastro">Editar</button>
     </div><!-- second column -->
   </div><!-- first content -->
 </div>

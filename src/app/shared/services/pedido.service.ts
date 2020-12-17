@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class PedidoService {
-  URL_PEDIDOS =  'http://localhost:5050/pedidos';
+  URL_PEDIDOS =  'http://localhost:5051/pedidos';
   pedidos: Array<Pedido>;
 
   constructor(private httpClient: HttpClient) {

@@ -28,7 +28,10 @@ table{
   color: #e35e6b;
 }
 
-.btn {
+.btn-goback {
+  background-color: #EE7C7C;
+  border: 1px solid #EE7C7C;
+  transition: background-color .5s;
   border-radius: 15px;
   text-transform: uppercase;
   color: #fff;
@@ -36,17 +39,9 @@ table{
   padding: 10px 50px;
   cursor: pointer;
   font-weight: bold;
-  // width: 150px;
   align-self: center;
-  border: none;
-  // margin-top: 1rem;
 }
-.btn-primary {
-  background-color: #EE7C7C;
-  border: 1px solid #EE7C7C;
-  transition: background-color .5s;
-}
-.btn-primary:hover {
+.btn-goback:hover {
   background-color: transparent;
   color: #EE7C7C;
   border: 1px solid #EE7C7C;

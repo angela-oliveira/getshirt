@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ClienteService {
-  URL_CLIENTES =  'http://localhost:5050/clientes';
+  URL_CLIENTES =  'http://localhost:5051/clientes';
   clientes: Array<Cliente>;
 
   constructor(private httpClient: HttpClient) {
@@ -26,6 +26,10 @@ export class ClienteService {
 
   pesquisarPorId(id: string): Observable<Cliente> {
     return this.httpClient.get<Cliente>(`${this.URL_CLIENTES}/${id}`);
+  }
+
+  login(email: string, senha: string): Observable<Cliente> {
+    return this.httpClient.get<Cliente>(`${this.URL_CLIENTES}/${email}/${senha}`);
   }
 
   atualizar(cliente: Cliente): Observable<Cliente> {

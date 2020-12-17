@@ -26,13 +26,13 @@ import {ClienteModule} from './cliente/cliente.module';
 import {MatTabsModule} from '@angular/material/tabs';
 import {FirestoreModule} from './firestore/firestore.module';
 import {EmpresaModule} from './empresa/empresa.module';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    LogInComponent,
+    HeaderComponent
   ],
 
   imports: [
@@ -54,7 +54,8 @@ import {EmpresaModule} from './empresa/empresa.module';
     ClienteModule,
     MatTabsModule,
     FirestoreModule,
-    EmpresaModule
+    EmpresaModule,
+    MatSnackBarModule
 
   ],
   providers: [],

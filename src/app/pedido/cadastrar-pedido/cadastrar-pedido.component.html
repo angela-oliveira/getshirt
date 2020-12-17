@@ -1,6 +1,6 @@
 <div class="component">
   <div class="button-go-back">
-    <button class="btn-goback" (click)="goback()">Voltar</button> 
+    <button class="btn-goback" (click)="goback()">Voltar</button>
   </div>
 <mat-card class="mat-form-inserirPedido">
   <div class="form-pedido">
@@ -32,6 +32,7 @@
     <mat-form-field appearance="fill"class="mart-card-form">
       <mat-label>Telefone</mat-label>
       <input matInput [(ngModel)]="pedido.telefone" placeholder="digite o telefone">
+      <mat-cell *matCellDef="let pedido">{{pedido.telefone | telefonePipe}}</mat-cell>
     </mat-form-field>
 
     <br>
@@ -49,8 +50,8 @@
   </div>
 
 <div class="button-register-pedido">
-  <button class="btn btn-primary" [routerLink]="['/listarpedido']">Listar Pedidos</button>  
-  <button class="btn btn-second" [routerLink]="['/cadastrarpedido']" (click)="inserirPedido()"  *ngIf="operacaoCadastro">Cadastrar</button>  
+  <button class="btn btn-primary" [routerLink]="['/listarpedido']">Listar Pedidos</button>
+  <button class="btn btn-second" [routerLink]="['/cadastrarpedido']" (click)="inserirPedido()"  *ngIf="operacaoCadastro">Cadastrar</button>
   <!-- <button mat-raised-button color="primary" [routerLink]="['/listarpedido']">Listar Pedidos</button>
   <button mat-raised-button btn btn-second [routerLink]="['/cadastrarpedido']"(click)="inserirPedido()"  *ngIf="operacaoCadastro">Cadastrar</button> -->
  <!-- <button mat-raised-button color="primary">Cadastrar Pedido</button> -->

@@ -49,7 +49,7 @@ export class CadastrarEmpresaComponent implements OnInit {
           snackConfig.politeness = 'assertive';
           snackConfig.duration = 5000;
           snackConfig.panelClass = ['Success'];
-          this.snackBar.open( 'Empresa Cadastrado com sucesso.', 'x', snackConfig)
+          this.snackBar.open( 'Empresa cadastrada com sucesso.', 'x', snackConfig)
         }
       );
     }

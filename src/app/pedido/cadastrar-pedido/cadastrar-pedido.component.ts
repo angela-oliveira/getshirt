@@ -43,7 +43,7 @@ export class CadastrarPedidoComponent implements OnInit {
           snackConfig.duration = 5000;
           snackConfig.panelClass = ['Success'];
 
-          this.snackBar.open( 'Pedido Alterado com sucesso.', 'x', snackConfig)
+          this.snackBar.open( 'Pedido alterado com sucesso.', 'x', snackConfig)
 
           this.roteador.navigate(['listarpedido']);
         }
@@ -58,7 +58,7 @@ export class CadastrarPedidoComponent implements OnInit {
           snackConfig.duration = 5000;
           snackConfig.panelClass = ['Success'];
 
-          this.snackBar.open( 'Pedido Cadastrado com sucesso.', 'x', snackConfig)
+          this.snackBar.open( 'Pedido inserido com sucesso.', 'x', snackConfig)
           this.roteador.navigate(['listarpedido']);
         }
       );

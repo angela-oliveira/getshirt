@@ -43,7 +43,7 @@ export class CadastrarClienteComponent implements OnInit {
           snackConfig.duration = 5000;
           snackConfig.panelClass = ['Success'];
 
-          this.snackBar.open( 'Cliente Alterado com sucesso.', 'x', snackConfig)
+          this.snackBar.open( 'Cliente alterado com sucesso.', 'x', snackConfig)
           // this.roteador.navigate(['listarpedido']);
         }
       );
@@ -55,7 +55,7 @@ export class CadastrarClienteComponent implements OnInit {
           snackConfig.politeness = 'assertive';
           snackConfig.duration = 5000;
           snackConfig.panelClass = ['Success'];
-          this.snackBar.open( 'Cliente Cadastrado com sucesso.', 'x', snackConfig)
+          this.snackBar.open( 'Cliente cadastrado com sucesso.', 'x', snackConfig)
 
           console.log(clienteInserido);
           this.roteador.navigate(['clientepainel']);

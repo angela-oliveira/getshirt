@@ -81,7 +81,6 @@ export class CadastrarClienteComponent implements OnInit {
         clienteLogado => {
           this.clienteLogin = clienteLogado;
           if (this.clienteLogin == null){
-            this.clienteLogado = false;
             const snackConfig = new MatSnackBarConfig();
             snackConfig.politeness = 'assertive';
             snackConfig.duration = 5000;

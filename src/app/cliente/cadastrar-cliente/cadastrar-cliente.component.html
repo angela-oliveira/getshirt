@@ -22,6 +22,8 @@
       <mat-form-field appearance="fill" class="mat-form-simples">
         <mat-label>CPF</mat-label>
         <input matInput [(ngModel)]="cliente.cpf" placeholder="CPF">
+        <td mat-cell *matCellDef="let cliente">{{cliente.cpf | cpf}}</td>
+
       </mat-form-field>
       <mat-form-field appearance="fill" class="mat-form-simples">
         <mat-label>Telefone</mat-label>

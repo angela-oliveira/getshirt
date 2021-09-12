@@ -33,63 +33,65 @@ export class CadastrarEmpresaComponent implements OnInit {
   ngOnInit(): void {
   }
   inserirEmpresa(): void {
-    if (this.empresa.idEmpresa) {
-      this.empresaService.atualizar(this.empresa).subscribe(
-        empresaAlterado => {
-          console.log(empresaAlterado);
-          this.roteador.navigate(['/empresapainel']);
-          // this.roteador.navigate(['listarpedido']);
-        }
-      );
-    } else {
-      console.log('aqui', this.empresa)
-      if (!this.empresa.nome) {
-        console.log('nao existe')
-        const snackConfig = new MatSnackBarConfig();
-        snackConfig.politeness = 'assertive';
-        snackConfig.duration = 5000;
-        snackConfig.panelClass = ['Success'];
-        this.snackBar.open( 'Preencha todos os campos.', 'x', snackConfig)
-        
+    this.roteador.navigate(['/empresapainel']);
+    // if (this.empresa.idEmpresa) {
+    //this.empresaService.atualizar(this.empresa).subscribe(
+    //  empresaAlterado => {
+    //    console.log(empresaAlterado);
+    ////    this.roteador.navigate(['/empresapainel']);
+    //    // this.roteador.navigate(['listarpedido']);
+    //  }
+    //);
+    //} else {
+    //console.log('aqui', this.empresa)
+    //if (!this.empresa.nome) {
+    ////  console.log('nao existe')
+    // const snackConfig = new MatSnackBarConfig();
+    //  snackConfig.politeness = 'assertive';
+    //  snackConfig.duration = 5000;
+    //  snackConfig.panelClass = ['Success'];
+    //  this.snackBar.open( 'Preencha todos os campos.', 'x', snackConfig)
 
-      } else {
-      this.empresaService.inserir(this.empresa).subscribe(
-        empresaInserido => {
-          console.log(empresaInserido);
 
-          const snackConfig = new MatSnackBarConfig();
-          snackConfig.politeness = 'assertive';
-          snackConfig.duration = 5000;
-          snackConfig.panelClass = ['Success'];
-          this.snackBar.open( 'Empresa cadastrada com sucesso.', 'x', snackConfig)
-          this.roteador.navigate(['/empresapainel']);
-        }
-      );
+    //} else {
+    //this.empresaService.inserir(this.empresa).subscribe(
+    //  empresaInserido => {
+    //    console.log(empresaInserido);
 
-      }
-    }
+    //    const snackConfig = new MatSnackBarConfig();
+    //    snackConfig.politeness = 'assertive';
+    //    snackConfig.duration = 5000;
+    //    snackConfig.panelClass = ['Success'];
+    //    this.snackBar.open( 'Empresa cadastrada com sucesso.', 'x', snackConfig)
+          // this.roteador.navigate(['/empresapainel']);
+          //}
+        //);
+
+        //   }
+   // }
   }
   fazerloginEmpresa(): void{
-    if (!this.empresaLogin.email || !this.empresaLogin.senha) {
-      const snackConfig = new MatSnackBarConfig();
-      snackConfig.politeness = 'assertive';
-      snackConfig.duration = 5000;
-      this.snackBar.open( 'Preencha todos os campos.', 'x', snackConfig)
-    } else {
-      this.empresaService.login(this.empresaLogin.email, this.empresaLogin.senha).subscribe(
-        empresaLogada => {
-          this.empresaLogin = empresaLogada;
-          if (this.empresaLogin == null){
-            const snackConfig = new MatSnackBarConfig();
-            snackConfig.politeness = 'assertive';
-            snackConfig.duration = 5000;
-            this.snackBar.open( 'E-mail ou senha incorreta.', 'x', snackConfig)
-          }else {
-            this.roteador.navigate(['empresapainel']);
-          }
-        }
-      );
-    }
-    
+    this.roteador.navigate(['empresapainel']);
+//    if (!this.empresaLogin.email || !this.empresaLogin.senha) {
+//      const snackConfig = new MatSnackBarConfig();
+    //    snackConfig.politeness = 'assertive';
+    //snackConfig.duration = 5000;
+    // this.snackBar.open( 'Preencha todos os campos.', 'x', snackConfig)
+    //} else {
+    //this.empresaService.login(this.empresaLogin.email, this.empresaLogin.senha).subscribe(
+    //  empresaLogada => {
+    //    this.empresaLogin = empresaLogada;
+    //    if (this.empresaLogin == null){
+    //      const snackConfig = new MatSnackBarConfig();
+    //      snackConfig.politeness = 'assertive';
+    ////      snackConfig.duration = 5000;
+    //    this.snackBar.open( 'E-mail ou senha incorreta.', 'x', snackConfig)
+    //    }else {
+    //      this.roteador.navigate(['empresapainel']);
+    //    }
+    //  }
+//      );
+  //  }
+
   }
 }

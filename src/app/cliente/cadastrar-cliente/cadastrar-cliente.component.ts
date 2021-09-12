@@ -35,68 +35,70 @@ export class CadastrarClienteComponent implements OnInit {
   ngOnInit(): void {
   }
   inserirCliente(): void {
-    if (this.cliente.idCliente) {
-      this.clienteService.atualizar(this.cliente).subscribe(
-        clienteAlterado => {
-          console.log(clienteAlterado);
-          const snackConfig = new MatSnackBarConfig();
-          snackConfig.politeness = 'assertive';
-          snackConfig.duration = 5000;
-          snackConfig.panelClass = ['Success'];
+    this.roteador.navigate(['/listarclientes']);
+    ////  if (this.cliente.idCliente) {
+    //this.clienteService.atualizar(this.cliente).subscribe(
+    //    clienteAlterado => {
+    //     console.log(clienteAlterado);
+    //    const snackConfig = new MatSnackBarConfig();
+    //    snackConfig.politeness = 'assertive';
+    //    snackConfig.duration = 5000;
+    //    snackConfig.panelClass = ['Success'];
+//
+    //        this.snackBar.open( 'Cliente alterado com sucesso.', 'x', snackConfig)
+    //    if (this.operacaoCadastro) {
+//
+    //        this.roteador.navigate(['/clientepainel']);
+    //    } else {
+//
+    ////        this.roteador.navigate(['/listarclientes']);
+    //  }
+    //  }
+    //);
+    //} else {
+    //if (!this.cliente.nome) {
+    //  const snackConfig = new MatSnackBarConfig();
+    //  snackConfig.politeness = 'assertive';
+    //  snackConfig.duration = 5000;
+    //  this.snackBar.open( 'Preencha todos os campos.', 'x', snackConfig)
+    //} else {
+    //  this.clienteService.inserir(this.cliente).subscribe(
+    //    clienteInserido => {
+    //      console.log(clienteInserido);
+    //      const snackConfig = new MatSnackBarConfig();
+    //      snackConfig.politeness = 'assertive';
+    //      snackConfig.duration = 5000;
+    //      this.snackBar.open( 'Cliente cadastrado com sucesso.', 'x', snackConfig)
+    ////      this.roteador.navigate(['clientepainel']);
+    //    }
+    //  );
+    //}
 
-          this.snackBar.open( 'Cliente alterado com sucesso.', 'x', snackConfig)
-          if (this.operacaoCadastro) {
-
-          this.roteador.navigate(['/clientepainel']);
-          } else {
-
-          this.roteador.navigate(['/listarclientes']);
-          }
-        }
-      );
-    } else {
-      if (!this.cliente.nome) {
-        const snackConfig = new MatSnackBarConfig();
-        snackConfig.politeness = 'assertive';
-        snackConfig.duration = 5000;
-        this.snackBar.open( 'Preencha todos os campos.', 'x', snackConfig)
-      } else {
-        this.clienteService.inserir(this.cliente).subscribe(
-          clienteInserido => {
-            console.log(clienteInserido);
-            const snackConfig = new MatSnackBarConfig();
-            snackConfig.politeness = 'assertive';
-            snackConfig.duration = 5000;
-            this.snackBar.open( 'Cliente cadastrado com sucesso.', 'x', snackConfig)
-            this.roteador.navigate(['clientepainel']);
-          }
-        );
-      }
-      
-    }
+   // }
   }
   fazerlogin(): void{
-    if (!this.clienteLogin.email || !this.clienteLogin.senha) {
-      const snackConfig = new MatSnackBarConfig();
-      snackConfig.politeness = 'assertive';
-      snackConfig.duration = 5000;
-      this.snackBar.open( 'Preencha todos os campos.', 'x', snackConfig)
-    } else {
-      this.clienteService.login(this.clienteLogin.email, this.clienteLogin.senha).subscribe(
-        clienteLogado => {
-          this.clienteLogin = clienteLogado;
-          if (this.clienteLogin == null){
-            const snackConfig = new MatSnackBarConfig();
-            snackConfig.politeness = 'assertive';
-            snackConfig.duration = 5000;
-            this.snackBar.open( 'E-mail ou senha incorreta.', 'x', snackConfig)
-          }else {
-            this.roteador.navigate(['clientepainel']);
-          }
-        }
-      );
-    }
-    
+    this.roteador.navigate(['clientepainel']);
+   // if (!this.clienteLogin.email || !this.clienteLogin.senha) {
+    //   const snackConfig = new MatSnackBarConfig();
+    //snackConfig.politeness = 'assertive';
+    //snackConfig.duration = 5000;
+    //this.snackBar.open( 'Preencha todos os campos.', 'x', snackConfig)
+    //} else {
+    //this.clienteService.login(this.clienteLogin.email, this.clienteLogin.senha).subscribe(
+    //  clienteLogado => {
+    //    this.clienteLogin = clienteLogado;
+    //    if (this.clienteLogin == null){
+    //      const snackConfig = new MatSnackBarConfig();
+    ////      snackConfig.politeness = 'assertive';
+    //    snackConfig.duration = 5000;
+    //      this.snackBar.open( 'E-mail ou senha incorreta.', 'x', snackConfig)
+    //    }else {
+    //      this.roteador.navigate(['clientepainel']);
+    //    }
+    //  }
+    //);
+   // }
+
   }
 
 }
